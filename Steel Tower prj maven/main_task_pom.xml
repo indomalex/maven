@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.songtech</groupId>
+		<artifactId>TDDCS</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>main_task</artifactId>
+	<packaging>war</packaging>
+	<name>定时任务</name>
+	<build>
+		<finalName>main_task</finalName>
+
+		<filters><!--获得过滤使用的源文件 即有实际数据的地反 -->
+			<filter>src/main/filters/${env}.properties</filter>
+		</filters>
+	
+		<!-- 指定 src/main/resources下所有文件及文件夹为资源文件 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering> <!--是否使用过滤器 -->
+			</resource>
+		</resources>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.songtech</groupId>
+			<artifactId>main_refactor</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
